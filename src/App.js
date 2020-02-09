@@ -2,6 +2,22 @@ import React, { useState, useEffect } from 'react';
 import 'rbx/index.css';
 import { Button, Container, Title } from 'rbx';
 
+import firebase from 'firebase/app';
+import 'firebase/database';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBn--BAR7LvTOV8NiTkXLreJldhtulzlyE",
+  authDomain: "scheduler-6bd5e.firebaseapp.com",
+  databaseURL: "https://scheduler-6bd5e.firebaseio.com",
+  projectId: "scheduler-6bd5e",
+  storageBucket: "scheduler-6bd5e.appspot.com",
+  messagingSenderId: "833338586136",
+  appId: "1:833338586136:web:a94cda3d7bb811a134ff6d",
+  measurementId: "G-MCY8JSB4JJ"
+};
+
+firebase.initializeApp(firebaseConfig);
+
 const App = () => {
   const [schedule, setSchedule] = useState({ title: '', courses: [] });
   const url = 'https://courses.cs.northwestern.edu/394/data/cs-courses.php';
